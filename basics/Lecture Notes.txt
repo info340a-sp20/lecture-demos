@@ -1,16 +1,18 @@
 Side 2
 --------------
-Here's what we are going to do today
+Welcome!
 
-If you've done of this stuff before it'll be somewhat review
-But lots of folks haven't in Here
+This recording will cover the structure of the course. We'll do some introductions. Hopefully discuss things we can do to make this online-class more collaborative and fun.
 
-Wake up your iMac
-I will share the screen pretty much every class session.
+Historically, this class does a good portion of the work in teams of 2 and 4. I am hoping that we can get this to occur in this online format. The challenge will be to pair you up and get you communicating even though you can't actually meet in person.
 
-Remind me to share if I forget. thx
+There are real benefits to working with others. You all learn from each other. It models the real world development life. It should elevate the overall quality of your work.
 
-In theory this is being recorded. Sometimes it doesn't work. Sometimes the volume gets screwed up.
+If you've done client side development before the first few lectures will somewhat review. But I suspect you'll learn something regardless.
+But lots of folks haven't done much of this at all. So this will be alot of material and feel free to ask questions at any time. 
+
+Normally I would have you wake up the mac in room 430 so you could see my screen and slide deck as well as have opportunity to write some code and practice while the lecture is going on. But you'll want to get yourself setup at home such that you can see the recording and practice stuff as I go along on your machine. You'll have the benefit of being able to pause the recording when you need to.
+
 
 Slide 5 and 6:
 --------------
@@ -33,6 +35,36 @@ Slide 9
 --------------
 Fun facts about Us
 
+Fall 2019 was my first quarter back at UW in 6 years.
+Watching this class at 530AM due to Hawaii timezone
+I can hold my breath for 5 minutes
+I swam competitively for 12.5 years
+I have a cat (grey tabby)
+I don't like chocolate
+I have seen the pope speak at the Vatican
+I like cars
+I have gone to a sushi restaurant so many times that the employee remembered me and my order.
+I have triple citizenship!
+I'm Croatian :)
+Both of my thumbs are hitchhiker's thumbs
+I really love playing games! any games!
+I play the piano and harp!
+I built project cars in my free time
+Love to travel !
+I am on the UW Cheer team!
+I don't know how to swim
+I have the same birthday as Spongebob Squarepants
+I’m a military kid.
+i was born on april fools day
+My favorite flower is lavender
+I play tennis & am a Roger Federer fan
+I’m from Yakima, WA
+I'm a certified scuba diver!
+I once at so much at a buffet that they kicked me out
+My favorite fruit is peaches
+I can lick my nose
+
+
 Slide 10
 --------------
 Course Resources - Canvas
@@ -41,19 +73,25 @@ Canvas is the main source for information
 
 My contact info at the top
 
-Elisa (pronounced Allisa) is your TA. She is a great source of help.
+Patrin Sinteppadon He will be a great source of help.
 
-It's a difficult class. It's a great class. Use Elisa me, your classmates, google as sources of information and help.
+It's a difficult class. It's a great class. Use Patrin, me, your classmates, google as sources of information and help.
+
+Click "syllabus"
+- This class is essentially all asynchronous. We think this is better for you. It's more flexible. 
+However I want to make sure you have access to your classmates, and me for support and to help. So I'll still start off the quarter having a zoom session active and ready to help folks 3 days a week. 
+
+You will have to take responsiblity and be motivated. Ask questions. What don't you understand. You will lose your normal queues that you get in classtime. Recognize that. Ask questions. 
+
+Main resources are: course book
 
 Walk through a few things on the site... Show them what isn't "cooked yet". Like some of the assignments
 
 Slide 11
 --------------
 Flipped Class 
-You are doing much of your learning at home. In class we are reviewing, giving you examples, reinforcing
-At home you should be keeping ahead of the reading before lecture.
+Obviously in this online class you are doing all of your learning at home. But even when this isn't an online class the lectures give you examples and discuss the content but much of what you will get out of this class will be reading and studying outside of the lectures.
 
-You will have time to to some work in many lectures during the 2nd half of the class. 
 In that way it is somewhat self pacing. But we move so fast that really you will want to keep on top of things.
 You will have access to other students and the instuctors in class.
 
@@ -61,30 +99,47 @@ The flip side of this means you have to be self motivated. I won't give you all 
 
 You guys are capable of doing this. You are all UW students in the ischool.
 
-Typically we spend 1/2 of the class doing the lecture
-Then we spend the 2nd half of the class doing exercises and projects
+Typically when this isn't an online course we spend 1/2 of the class doing the lecture, and the 2nd half of the class doing exercises and projects
 
 Slide 12
 --------------
 Course Resources
 The course book is here. It's really pretty good and the exercises, lectures and projects follow very closely.
 You will do well to stay up to date with this. It's not alot of reading.
+But the course text has more detail than my lectures.
 
 Notice it's a spider web (get it?)
 
-We generally do about a chapter a day, but we start off with more content.
+We generally do about a chapter a session, but we start off with more content.
+
+I am shooting to have the videos ready for you in the mornings on Mondays and Wednesdays.
 
 Slide 13
 --------------
 There are 2 main types of assignments
 Problem sets - definitely follow the readings
 
-These probably take about 3 to 4 hours a week. You'll have some time in class
-But you'll also likely have work to do outside of class
+60% of the course grade is from the assignments. 
 
-We aren't super strict on due dates for problems sets, but you don't want to fall behind.
+There's a problem set each week. They each have 1 to 3 problems. They will take about 6 to 8 hours a week.
 
-In addition we have projects
+We aren't super strict on due dates for problems sets, but you don't want to fall behind. 
+You have 1 week grace on these. You can still turn in late, but you will get a 10% late penalty.
+These deadlines are useful for you based on prior quarters.
+But if you have some crazy event happen. Please let us know. We will do accomodations, but you need to let us know ahead of time.
+
+
+PROJECTS
+
+The second piece of work are projects. 2 parts
+1 that covers the 1st 5 weeks of the class (css, html, jscrip)
+2nd covers react
+
+The 2nd project can build off the 1st project. 
+
+Normally we do things in pairs. It's not a requirement. 
+But you'll probably do more and better work. Plus you'll get to learn to work remotely and deal with github, etc
+
 Pick something that you are excited about and want to work on.
 
 You can use it as a portfolio piece
@@ -93,25 +148,30 @@ You can change over time, but it's better to be able to build on your previous w
 
 Go to the page on Canvas (link on slide)
 
-Walk through the stages
+Each project has multiple deliverables (click on "assignments" on the home page).
 
-We can adjust as time goes. We've done it once.
+3 parts to turn in for each project
+short topic proposal - what you are gonna do
+mid-point draft (mockup or react app)
 
-On lab on Thursday we'll do some brainstorming. And you will be encouraged to pick one of the topics
-But you can pick something else. It just is easier to combine if you pick things that are somewhat related.
+projects will be graded on a broader scale this round. You'll still get feelback and comments, but if you demonstrate, you'll do fine. You can still resubmit things.
+There are these 1 point deliverables in there. Those are to keep you on track. If you hit the bar at that point you'll get the point. 
 
-These are due about every other week through the quarter.
+We don't want you stressing on grades.
 
 Slide 14
 --------------
 The time expectations is pretty heavy. Be prepared. The average amount of time per week has been about 18 hours even through
 typical 5 credit classes here take about 15 hours. 
 
+This is an online class. It's going to be weird. Don't put off until the last minute. Ask for help.
+Programming classes are often time consuming. I know from prior quarters, some students say they spend alot of time.
+
 Slide 15 
 --------------
 Course Resources
 
-Teams is the best way to ask. And don't just ask Elissa or Me. You can do that, but you should also propose to the #general thread.
+Teams is the best way to ask. And don't just ask Patrin or Me. You can do that, but you should also propose to the #general thread.
 
 
 The goal is for you to learn. Use the methods that help you.
@@ -140,11 +200,21 @@ Slide 17
 --------------
 Client-side Web Development
 
+
+
+This lecture covers chapters 1,2, and 5. Much of this is review for many of you but you will likely hear something new or be reminded of something that will be useful as a reminder.
+
+In the text there is an additional chapter called "Getting Setup". You will need to work through that in order to get your machine configured with the tools you need to do the work.
+
+
+As of the recording of this lecture, I haven't finished the Canvas site. But there are a couple places where I want to show you how to find information that you will use each week. So I will show you a prior quarters canvas page, which is organized the same as this quarters site, just to be able to show you where to look for the information in this lecture.
+
+
 We are doing work on the "Client side"
 
-On your own machine. Not the stuff happening on the web server
+It's the code that is managed by the browser on your own machine. Not the stuff happening on the web server. 
 
-Which of these two computers are we interested in working with? 
+So on the slide: Which of these two computers are we interested in working with? 
 
 Slide 18 and 19
 --------------
@@ -162,26 +232,29 @@ So what we are doing in this class is writing the source code for those files th
 Slide 21
 --------------
 Clone the starter code (for the demo)
-(You can also find this lecture demo repo from the "Code on Github" link on the canvas site.
 
-So this week might not be that important to clone the git repo of the demo we'll be doing in class
+There are a couple of ways you can clone my lecture demo code.
+1) I usually have it linked to the slides. Which are available on the canvas site.
+2) There is a link directly to the lecture-slides repo on github on canvas
+
+Let me show you on canvas where you will find these:
+
+
+For today, it might not that critical that you clone the git repo of the demo we'll be doing in class
 You can instead just create the couple of files if you want. Or follow along
 
-If you look on the Canvas site you'll see a link to the "code on github" (show them)
-And if you look for the "lecture-demos" repo, you'll see the stuff I worked on in 
-class there. I check it in after each session.
+As the quarter goes on, there will be good examples in the lecture-demos for you to refer back to and leverage.
 
-As the quarter goes on, there will be good examples there for you to refer back to.
+I think you all have had experience with git and github. But feel free to ask for help from me or from the TA or other class mates. You'll get much better with this by the end of the quarter. 
 
-You can try and work around with me in lecture. 
+1) Goto the repo, clone it and show that you've got the files locally
 
-I think you all have had experience with git and github
+
 
 Slide 22
 --------------
 Visual Studio is really pretty good. It's free open source from Microsoft
-You can use another IDE, but if you don't already have one you use,
-this is a good one.
+You can use another IDE, but if you don't already have one you use, this is a good one.
 
 command space, type "visual studio" and run it
 
@@ -255,7 +328,7 @@ Go back to the list of tags Walk through the items
 <h1>Hello HTML</h1>
 <p>write a sentence that says some stuff</p>
 
-<p>its way to early!</p>
+<p>this is a second sentence</p>
 
 <em>look at me!</em>
 
