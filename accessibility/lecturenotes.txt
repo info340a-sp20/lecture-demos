@@ -20,6 +20,15 @@ Stage 2 is the biggest one
 You can use mock data
 
 Around 35 minutes into class
+-----------------------------------------------------
+This is the one lecture where I won't really write any code. Normally I would use poll everywhere
+to review the readings from chapter 1,2,3 and 5. 
+Since this is a recorded lecture, instead I will still pose these review questions, then give you a minute to pause the recording to you can work out what answer you think is correct before I give the answer.
+I encourage you to pause the recording to try and answer the problems on your own. The purpose is to 
+learn the material, and it should stick better if you think about it and reconcile what you remember.
+
+You can still ask me over microsoft teams, or in the office hours. I think it's useful to see what others have asked as well.
+
 
 Slide 6:
 In order to help facilitate interaction with you guys
@@ -38,7 +47,7 @@ Take a minute to login please
 
 What is one question about material or about the course so far?
 -----------
-if you don' thave a question you can say "nope"
+if you don't thave a question you can say "nope"
 
 
 Why don't we have a final?  It's a skills based test. Nothing to memorize. This is how real web development works
@@ -193,16 +202,13 @@ Which techniques are used to support the PERCEIVABILITY of a web page? Select al
 
 All of these things listed are techniques
 
-html - allows us to leverage the semantics that come with HTML. so headings are described as headings
-if you use them correctly, you can automatically generate table of contents for example
+html - allows us to leverage the semantics that come with HTML. so headings are described as headings if you use them correctly, you can automatically generate table of contents for example 
 
-using <sections> is helpful. it's got a little more meaning than a <div> because sections are parts of a web
-page, and divs can be used to just combine
+using <sections> is helpful. it's got a little more meaning than a <div> because sections are parts of a web page, and divs can be used to just combine
 
 alt - makes it way easier to 
 
-aria-label - another standard for accessiblity support. it's like adding alt tags to things that
-aren't images
+aria-label - another standard for accessiblity support. it's like adding alt tags to things that aren't images
 So anything can have an alt tag, even like a <div>
 
 Particularly if you want to have a div to put in a background image to show an image because you
@@ -228,8 +234,7 @@ Things that are purely visual, then you want to add an aria label. But if there 
 
 <div class="search-image" aria-label="search"></div>
 
-example where you want to have a search image icon on your page and you want to be able to have alt text to describe
-but it's not a image.
+example where you want to have a search image icon on your page and you want to be able to have alt text to describe but it's not a image.
 
 only use them for visual only elements. They are there for edge cases. Where things wouldn't normally be accessible.
 
