@@ -15,13 +15,11 @@ We'll do some poll everywhere
 We'll do some demoing of media queries
 Then we'll have work time
 
-Project stage 1 is due in 2 weeks on 10/23.
+Project stage 1 is due in 2 weeks on 4/26.
 
 ------------------
 Slide 3
 Project Stage 1
-
-There are 4 basic parts to our 
 
 Static version of our application
 It doesn't need to have any interactivity other than hyperlinks
@@ -43,6 +41,9 @@ There are really 2 basic things that all the apps will have
 1) a home page where the user will select filters and make a query
 2) a page that shows the returning of that data
 
+For example if you have a list of items, you could make one of the items a link (anchor tag) so that when you click on the item it shows more detail of that item.
+
+
 So you will want to mock those things up.
 
 Questions?
@@ -60,7 +61,9 @@ flexbox wrap - won't wrap if you set the items to be a percent (like 50%), becau
 they will continue to adjust rather than wrap.
 ----
 
-Q2 - Which of the following are important when designing websites for mobile devices?
+SLIDE 5:
+-----------------------
+Which of the following are important when designing websites for mobile devices?
 
 All of them...Some of them might be more, but all are important
 
@@ -83,10 +86,11 @@ Fonts - Large enough fonts.
 From Text:
 "Fonts: Make sure to use a large enough font that it is readable on small screens… but don’t make headings or callout text too large so that you lose that precious real estate! You can make them more styled and prominent on desktop, where there is room for such flourishes. Be sure to use relative units to accommodate mobile user preferences and screen size variation. Also remember that special web fonts you may be downloading will also take up extra bandwidth!"
 
-Navigation-  Not over loading. Using the hamburger menu is a good idea. collapsable, hidden, so only have
+Navigation-  Not over loading. Using the hamburger menu is a good idea. collapsable, hidden, so only have to show when needed.
 
 From Text:
 "Navigation: Site navigation links take up a lot of room on small screens and may end up wrapping to multiple lines. Use small tab bars, or menu icons (e.g., the “hamburger icon”) to show complex menus on command. Most CSS frameworks provide some kind of collapsible navigation for mobile devices."
+
 Inputs - Make buttons big enough, thick fingers, etc
 
 
@@ -99,7 +103,9 @@ Also:
 
 
 ----
-Q2 - Mobile first design involves...
+SLIDE 6
+-----------------
+ Mobile first design involves...
 
 adding additional functionality when moving to super-capable devices (progressive enhancement).
 
@@ -111,7 +117,10 @@ We want people on mobile devices to get all the necessary features, and users wi
 An escalator is an example of graceful degradation. It always works as a stairs, but when we have electricity it is a moving stairs. But as graceful degradation, it's an escalator until it breaks down, and then it's a stairs.
 
 ----
-Q3 - In a mobile-first approach, a sites design and style (read CSS) should have:
+
+SLIDE 7
+-----------------------
+In a mobile-first approach, a sites design and style (read CSS) should have:
 
 We will use "normal" styling for mobile, and media queries for desktops/laptops
 
@@ -121,7 +130,9 @@ Then we use media queries (if statements) such that we can add those additional 
 
 The default behavior is this, and if we have a larger screen we will add functionality or do something different
 
-----
+
+SLIDE 8
+--------------------
 
 Q4 - In a CSS file, media queries should be written
 
@@ -138,6 +149,9 @@ then you could intermix the media queries for nav closer to the top where all th
 
 
 ---- 
+SLIDE 9
+--------------------------
+
 Q5 - True of False: A media query can contain muliple rules
 
 True: in general we are going put lots of rules within the media query rather than doing each rule independently
@@ -145,23 +159,23 @@ True: in general we are going put lots of rules within the media query rather th
 
 -----------------------
 
-SLIDE 5 
-Example Snapshot from the app I work on from yesterday showing the mobile/desktop/tablet usage
+SLIDE 10 
+Example Snapshot from the app I work on from last fall showing the mobile/desktop/tablet usage
 
 
 -----------------------
 
-SLIDE 6
+SLIDE 11
 Example - Browser usage on the site as well
 
 -----------------------
 
-SLIDE 7
+SLIDE 12
 Demo: Media queries
 
 -----------------------
 
-SLIDE 8
+SLIDE 13
 Media queries
 
 You've probably seen how sometimes mobile browsers shrink content to fit the smaller screen.
@@ -174,12 +188,12 @@ Mobile web browsers will do some work on their own to adjust the web page in res
 To fix this, you need to specify the viewport size and scale by including an appropriate <meta> element in your HTML:
 
 -----------------------
-SLIDE 9
+SLIDE 14
 Specifying Viewport
 
 First let's look at our demo code again: Jump to Visual Studio and show the html file and the css file
 
-Remember what we have in this sample code from Monday:
+Remember what we have in this sample code from last week:
 In the html file we have these six paragraphs which are within divs to break them up. They are each with in the 
 section of class "boxes". Allows us to use CSS to make them into boxes and control width and height.
 
@@ -201,7 +215,7 @@ You are going to want to add this to your boiler plate template for this class.
 
 ------------------
 
-SLIDE 10
+SLIDE 15
 Media Queries (CSS file)
 In our css, we can use "Media Queries" to apply rules like an "if" statement based on the size of the screen
 
@@ -229,7 +243,7 @@ Also if you click on the "responsive" dropdown filter you can see what it would 
 You can also manually type the size of dimensions if you select "responsive". Useful!!
 
 -------------------------------
-SLIDE 11
+SLIDE 16
 
 Media Queries (CSS file)
 
@@ -247,9 +261,12 @@ The last on the page wins, so can get screwed up... that's why we go smaller, to
 
 You could use the AND to fix this, but considered poor coding style  ex==> @media (min-width: 768px) and (max-width:992px){ }
 
+
+SHOW THE DEMO CODE NOW
+
 -----------------------------
 
-SLIDE 12
+SLIDE 17
 
 Media Queries (CSS)
 
@@ -259,7 +276,7 @@ read the slide... it's pretty self evident
 
 
 ------------------------
-SLIDE 13
+SLIDE 18
 
 Responsive FlexBox
 
