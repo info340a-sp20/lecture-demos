@@ -23,7 +23,7 @@ What we've done so far
 --------------------------
 
 Slide 4
-Poll everywhere
+Review questions
 
 -------------------------
 
@@ -75,9 +75,14 @@ We are creating a data value when declaring functions.
 
 It's like a function is a recipe
 
+So you can pass around recipes
+
+
 -------------------------------------
 Slide 9
 Anonomous Variables 
+
+literal versus anonymous
 
 Passing a literal.
 If we don't include a name, it's an anonmous function.

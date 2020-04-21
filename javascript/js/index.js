@@ -25,7 +25,7 @@
 //     console.log("Hello, "+ person);
 // }
 // let sayGreeting = function(person){
-//     console.log("Hi there,",+ person);
+//     console.log("Hi there, "+ person);
 // }
 
 // sayHello("class");
@@ -43,36 +43,32 @@
 
 // let myArray = ['a','b','c'];
 
-// typeof myArray //=> 'object'
+// // typeof myArray //=> 'object'
 // console.log(typeof myArray);
 
 // let other = myArray;
 
 // console.log( other[1] ); // <!-- access value in other -->
 
-//PART 2
+// //PART 2
+// let obj = {}
 // function sayHello(name) { 
-//     console.log("Hello, "+name);
-//  }
- 
-//  //takes ANOTHER FUNCTION as an arg
-//  //will call the arg function, 
-//  //passing it "world"
-//  function doWorld(aFunction) {
-//     aFunction("world");
-//  }
- 
- 
- 
-//  //call function and pass value
-//  doWorld(sayHello); //prints "Hello world"
- 
- 
-//  //pass literal (anonymous value)
-//  doWorld(function(msg) {
-//    console.log("you said: "+msg);
-//  }); //prints "you said: world"
- 
+//    console.log("Hello, "+name);
+// }
+
+// //assign function to object
+// obj.sayHi = sayHello;
+
+// //access with dot notation
+// obj.sayHi('all'); //prints "Hello all"
+
+
+// //assign literal (anonymous value)
+// obj.otherFunc = function() { 
+//     console.log("Hello world!");
+// }
+
+// obj.otherFunc();
 
 
 
@@ -96,7 +92,7 @@
 
 //SLIDE 13 - takes in TWO callback functions!
 
-// function doTogether(firstCallback, secondCallback){
+// function doTogether(firstCallback(), secondCallback){
 //     firstCallback();  //execute the first function
 //     secondCallback();  //execute the second function
 //     console.log('at the same time!');
@@ -128,6 +124,11 @@ let myArray1 = [1,2,3,4,5];
 // });
 // console.log(sum);
 
+// sum = 0;
+// for (let item of myArray1){
+//     sum = sum + item;
+// }
+// console.log(sum);
 
 //SLIDE 15/16 - MAPPING
 
@@ -139,7 +140,7 @@ let myArray1 = [1,2,3,4,5];
 
 // myArray1 = myArray1.map(function(n) {   //using map with callback
 //     return n*n;
-// })
+// });
 // console.log(myArray1);
 
 
@@ -156,7 +157,7 @@ let myArray1 = [1,2,3,4,5];
 
 // let myReduction = myArray1.reduce(function(total, next){
 //     return total+next;
-// }, 5)
+// });
 // console.log(myReduction);
 
 
