@@ -12,7 +12,6 @@ PLAN FOR TODAY
 
 Feedback from you guys on the course
 Functional programming lecture
-Worktime
 
 ----------------------------
 Slide 3
@@ -76,6 +75,11 @@ We are creating a data value when declaring functions.
 It's like a function is a recipe
 
 So you can pass around recipes
+
+Think about what's happening under the covers in a computer program, when it starts, variables, constants, code all get loaded into memory.
+
+We access variables because there is a specific address in memory that we can access and manipulate.
+Similarly functions also are stored in memory at a specific location. So we can also access these code segments with an address too. 
 
 
 -------------------------------------
@@ -172,6 +176,8 @@ We call these things "callback" functions.
 
 Functions that we are going to call back later. We provide the recipe (the function).
 
+Paste the sample code into visual code
+
 Walk through the examples. Maybe show how you can have the two functions passed in as anonymous functions
 
 remember to delete the function name when you paste in the anonymous code
@@ -184,7 +190,7 @@ like this -> doTogether(patHead(), rubBelly);
 
 So where would we use this idea of a callback?
 
-In array iteration
+In array iteration --> They expect a callback function
 -------------------------------------
 
 Slide 14
@@ -274,6 +280,8 @@ Take a bunch of elements and smash it down (sum, medium, average, etc) and retur
 Take a bunch of things and return a single value.
 
 The aggregation function has 2 aruments, the accumulation, or sum or whatever the final deal will be, and and argument for the individual array items in each iteration.
+
+The reduce() function also takes 2 arguments, but the 2nd is optional. It's the initial value. In my example if I put in 2, then reduce would add all the values in the array plus 2 (the initial total).
 
 Slide 20
 
