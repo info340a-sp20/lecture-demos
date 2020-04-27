@@ -1,33 +1,33 @@
 'use strict';
 
 // // Slide 8 - (example 1)
-// let theH1 = document.querySelector('h1');
-// console.log(theH1)
+let theH1 = document.querySelector('h1');
+console.log(theH1)
 
-// //change content
-// let subtitle = document.querySelector('header p');
-// subtitle.innerHTML = subtitle.textContent + " <em>Prof Carlson</em>";
-
-
-//  //change attributes - SLIDE 9 (example 2)
-//  let img = document.querySelector('img');
-//  img.src = 'img/husky.jpg';
+//change content
+let subtitle = document.querySelector('header p');
+subtitle.innerHTML = subtitle.textContent + " <em>Prof Carlson</em>";
 
 
+//  change attributes - SLIDE 9 (example 2)
+ let img = document.querySelector('img');
+ img.src = 'img/husky.jpg';
 
-// // //change style - SLIDE 10 (example 3)
-// theH1.classList.add('text-success');
-// img.classList.add('anim');
+
+
+// //change style - SLIDE 10 (example 3)
+theH1.classList.add('text-success');
+img.classList.add('anim');
 
 // // in console add this : img.classList.toggle('scale-out')
 
 
 
-// //create an element -- SLIDE 11 (example 4)
-// let newLi = document.createElement('li')
-// newLi.innerHTML = '<a href="https://ischool.uw.edu/">Another iSchool Link</a>'
-// let linkList = document.querySelector('ul')
-// linkList.appendChild(newLi)
+//create an element -- SLIDE 11 (example 4)
+let newLi = document.createElement('li')
+newLi.innerHTML = '<a href="https://ischool.uw.edu/">Another iSchool Link</a>'
+let linkList = document.querySelector('ul')
+linkList.appendChild(newLi)
 
 
 
@@ -35,54 +35,54 @@
 
 
 // //USE Function to add item(s) - SLIDE 12 (example 5)
-// function renderCookie() {
-//     let jar = document.querySelector('#cookie-jar');
-//     let cookie = document.createElement('img')
-//     cookie.src = "img/cookie.png"
-//     cookie.alt = "a cookie"
-//     jar.appendChild(cookie);
-// }
+function renderCookie() {
+    let jar = document.querySelector('#cookie-jar');
+    let cookie = document.createElement('img')
+    cookie.src = "img/cookie.png"
+    cookie.alt = "a cookie"
+    jar.appendChild(cookie);
+}
 
 // renderCookie();
 
 
-// // USE Function to add n number by iterating - SLIDE 12 (example 5 continued)
-// function renderCookieJar(number) {
-//     let jar = document.querySelector('#cookie-jar')
-//     jar.innerHTML = '';             // deleting any cookies that used to be there
-//     for(let i=0; i<number; i++){
-//         renderCookie()
-//     }
-// }
+// USE Function to add n number by iterating - SLIDE 12 (example 5 continued)
+function renderCookieJar(number) {
+    let jar = document.querySelector('#cookie-jar')
+    // jar.innerHTML = '';             // deleting any cookies that used to be there
+    for(let i=0; i<number; i++){
+        renderCookie()
+    }
+}
 
-// // actually do that
-// renderCookieJar(10);
+// actually do that
+renderCookieJar(10);
 
 
-//  renderCookieJar(5);
+ renderCookieJar(5);
 
-// // Add Event Listener - SLIDE 14 (example 6)
+// Add Event Listener - SLIDE 14 (example 6)
 
-// let button1 = document.querySelector('#button1');  
-// button1.addEventListener('click', function() {      //register this callback inline function
-// console.log("button clicked")
-// renderCookieJar(3);
+let button1 = document.querySelector('#button1');  
+button1.addEventListener('click', function() {      //register this callback inline function
+console.log("button clicked")
+renderCookieJar(3);
 
-// });
+});
 
-// // Keep state as events occur - SLIDE 15 (example 7)
+// Keep state as events occur - SLIDE 15 (example 7)
 
-// let isPuppy = false;     //global variable
+let isPuppy = false;     //global variable
 
-// img.addEventListener('click', function() {
-//     if(isPuppy){
-//         img.src = 'img/husky.jpg';
-//         isPuppy = false
-//     } else {
-//         img.src = 'img/puppy.jpg';
-//         isPuppy = true
-//     }
-// })
+img.addEventListener('click', function() {
+    if(isPuppy){
+        img.src = 'img/husky.jpg';
+        isPuppy = false
+    } else {
+        img.src = 'img/puppy.jpg';
+        isPuppy = true
+    }
+})
 
 
 // // Temporary local data store
@@ -96,23 +96,23 @@
 // // example 8 
 
 
-// // try adding to ordered list
-// let myButton = document.querySelector('#add-item');
-// myButton.addEventListener('click', input);
+// try adding to ordered list
+let myButton = document.querySelector('#add-item');
+myButton.addEventListener('click', input);
 
-// function input() {
-//     console.log("input function");
-//     let input = document.querySelector('input');
-//     addItem(input.value);
-//     input.value = '';
-// }
+function input() {
+    console.log("input function");
+    let input = document.querySelector('input');
+    addItem(input.value);
+    input.value = '';
+}
 
-// function addItem(input){
-//     console.log("add function");
-//     let ol = document.querySelector('ol');
-//     let newLi = document.createElement('li');
-//     // newLi.innerHTML = input;
-//     newLi.textContent = input;
-//      ol.appendChild(newLi);
+function addItem(input){
+    console.log("add function");
+    let ol = document.querySelector('ol');
+    let newLi = document.createElement('li');
+    // newLi.innerHTML = input;
+    newLi.textContent = input;
+     ol.appendChild(newLi);
 
-// }
+}
