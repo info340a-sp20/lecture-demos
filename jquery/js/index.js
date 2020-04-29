@@ -17,7 +17,7 @@ console.log(head1);   //see it's an object
 let ball = $('circle')
 
 // slide 12 ball
-//example 1 syntax
+// example 1 syntax
 ball.attr('cx', 225)     //set individually
 ball.attr('cy', 95)
 
@@ -34,12 +34,12 @@ ball.attr('cy', 95)
 
 // // slide 13 buttons 
 
-// let buttons = $('button');
+let buttons = $('button');
 
-// // let buttons = $('button, p');
+// let buttons = $('button, p');
 
 
-// buttons.addClass('btn-success')
+buttons.addClass('btn-success')
 
 
 //slide 14 - adding new element
@@ -51,14 +51,14 @@ ball.attr('cy', 95)
 // newP.textContent = "I'm new!"
 
 
-// // part 2, show how to create in jquery
-// let newP = $("<p>I'm <em>new</em>!</p>")    //example using jquery
-// console.log(newP)
+// part 2, show how to create in jquery
+let newP = $("<p>I'm <em>new</em>!</p>")    //example using jquery
+console.log(newP)
 
-// // part 3, we stilln need to add to the DOM
-// $('#text .card-body').append(newP)
-// // $('#text .card-body').prepend(newP)  // move it to the start
-// $('#text .card-body').prepend("<p>I'm first!</p>")
+// part 3, we stilln need to add to the DOM
+$('#text .card-body').append(newP)
+// $('#text .card-body').prepend(newP)  // move it to the start
+$('#text .card-body').prepend("<p>I'm first!</p>")
 
 
 
@@ -78,36 +78,37 @@ ball.attr('cy', 95)
 //     })
 
 
-// Slide 15a
+// // Slide 15a
 
-let state = {
-    currentEmotion: "happy"
-}
-
-let imgElem = $('img')
-
-function renderEmotion() {
+// let state = {
+//     currentEmotion: "happy"
     
-    $(imgElem).attr('src', "img/" + state.currentEmotion + ".png");
+// }
 
-    if (state.currentEmotion === "happy") {
-        $('#mood').text("happy!");
+// let imgElem = $('img')
 
-    }
-    else {
-        $('#mood').text("surprised");
-    }
-}
+// function renderEmotion() {
+    
+//     $(imgElem).attr('src', "img/" + state.currentEmotion + ".png");
 
-imgElem
-    .mouseenter(function (event) {
-        state.currentEmotion = "surprised";
-        renderEmotion();
-    })
-    .mouseleave(function (event) {
-        state.currentEmotion = "happy";
-        renderEmotion();
-    })
+//     if (state.currentEmotion === "happy") {
+//         $('#mood').text("happy!");
+
+//     }
+//     else {
+//         $('#mood').text("surprised");
+//     }
+// }
+
+// imgElem
+//     .mouseenter(function (event) {
+//         state.currentEmotion = "surprised";
+//         renderEmotion();
+//     })
+//     .mouseleave(function (event) {
+//         state.currentEmotion = "happy";
+//         renderEmotion();
+//     })
    
 
 
@@ -117,11 +118,11 @@ imgElem
 // })
 
 
-// SLIDE 17 JQuery Animation Effects
+// // // SLIDE 17 JQuery Animation Effects
 
 // const state = {
 //     playground: {
-//         ballAtTop: true,
+//         ballAtTop: true
 //     }
 // }
 
