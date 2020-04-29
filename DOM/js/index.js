@@ -116,3 +116,42 @@ function addItem(input){
      ol.appendChild(newLi);
 
 }
+
+// example 9 - shows you how you can loop through an array of objects to put stuff
+// on the display. This idea will come in handy when you are reading from an api, or 
+// your test file.
+// 
+
+const LINKS = [
+    {url: 'https://espn.com', title: 'espn.com website'},
+    {url: 'https://ischool.uw.edu/', title: 'iSchool'},
+    {url: 'https://canvas.uw.edu/courses/1373025', title: 'Info340a Canvas'}
+]
+
+
+function createLink(url, title) {
+    let newListItemElem = document.createElement('li');
+    let newAnchorElem = document.createElement('a');
+    newAnchorElem.textContent = title;
+    newAnchorElem.href = url;
+    newListItemElem.appendChild(newAnchorElem);
+    return newListItemElem
+}
+
+let listElement = document.querySelector('#dynamicGen');
+let firstLink = createLink("https://ischool.uw.edu", "iSchool link");
+listElement.appendChild(firstLink);
+listElement.appendChild(createLink("example.com", "Example"));
+
+
+// Here's how you can read in from an array of objects to automate this
+function renderAllLinks(linksArray){
+    listElement.innerHTML = '';  // clear it out if you want to start from scratch
+    for(let linkObj of linksArray){
+        let linkElem = createLink(linkObj.url, linkObj.title);
+        listElement.appendChild(linkElem);
+
+    }
+}
+
+renderAllLinks(LINKS);
