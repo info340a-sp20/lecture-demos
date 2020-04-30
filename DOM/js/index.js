@@ -10,8 +10,8 @@ subtitle.innerHTML = subtitle.textContent + " <em>Prof Carlson</em>";
 
 
 //  change attributes - SLIDE 9 (example 2)
- let img = document.querySelector('img');
- img.src = 'img/husky.jpg';
+let img = document.querySelector('img');
+img.src = 'img/husky.jpg';
 
 
 
@@ -31,9 +31,6 @@ linkList.appendChild(newLi)
 
 
 
-
-
-
 // //USE Function to add item(s) - SLIDE 12 (example 5)
 function renderCookie() {
     let jar = document.querySelector('#cookie-jar');
@@ -50,7 +47,7 @@ function renderCookie() {
 function renderCookieJar(number) {
     let jar = document.querySelector('#cookie-jar')
     // jar.innerHTML = '';             // deleting any cookies that used to be there
-    for(let i=0; i<number; i++){
+    for (let i = 0; i < number; i++) {
         renderCookie()
     }
 }
@@ -59,14 +56,14 @@ function renderCookieJar(number) {
 renderCookieJar(10);
 
 
- renderCookieJar(5);
+renderCookieJar(5);
 
 // Add Event Listener - SLIDE 14 (example 6)
 
-let button1 = document.querySelector('#button1');  
-button1.addEventListener('click', function() {      //register this callback inline function
-console.log("button clicked")
-renderCookieJar(3);
+let button1 = document.querySelector('#button1');
+button1.addEventListener('click', function () {      //register this callback inline function
+    console.log("button clicked")
+    renderCookieJar(3);
 
 });
 
@@ -74,8 +71,8 @@ renderCookieJar(3);
 
 let isPuppy = false;     //global variable
 
-img.addEventListener('click', function() {
-    if(isPuppy){
+img.addEventListener('click', function () {
+    if (isPuppy) {
         img.src = 'img/husky.jpg';
         isPuppy = false
     } else {
@@ -107,13 +104,13 @@ function input() {
     input.value = '';
 }
 
-function addItem(input){
+function addItem(input) {
     console.log("add function");
     let ol = document.querySelector('ol');
     let newLi = document.createElement('li');
     // newLi.innerHTML = input;
     newLi.textContent = input;
-     ol.appendChild(newLi);
+    ol.appendChild(newLi);
 
 }
 
@@ -123,9 +120,9 @@ function addItem(input){
 // 
 
 const LINKS = [
-    {url: 'https://espn.com', title: 'espn.com website'},
-    {url: 'https://ischool.uw.edu/', title: 'iSchool'},
-    {url: 'https://canvas.uw.edu/courses/1373025', title: 'Info340a Canvas'}
+    { url: 'https://espn.com', title: 'espn.com website' },
+    { url: 'https://ischool.uw.edu/', title: 'iSchool' },
+    { url: 'https://canvas.uw.edu/courses/1373025', title: 'Info340a Canvas' }
 ]
 
 
@@ -145,9 +142,9 @@ listElement.appendChild(createLink("example.com", "Example"));
 
 
 // Here's how you can read in from an array of objects to automate this
-function renderAllLinks(linksArray){
+function renderAllLinks(linksArray) {
     listElement.innerHTML = '';  // clear it out if you want to start from scratch
-    for(let linkObj of linksArray){
+    for (let linkObj of linksArray) {
         let linkElem = createLink(linkObj.url, linkObj.title);
         listElement.appendChild(linkElem);
 
@@ -155,3 +152,7 @@ function renderAllLinks(linksArray){
 }
 
 renderAllLinks(LINKS);
+
+
+
+
