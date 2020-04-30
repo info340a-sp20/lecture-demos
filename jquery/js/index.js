@@ -55,7 +55,7 @@ buttons.addClass('btn-success')
 let newP = $("<p>I'm <em>new</em>!</p>")    //example using jquery
 console.log(newP)
 
-// part 3, we stilln need to add to the DOM
+// // part 3, we stilln need to add to the DOM
 $('#text .card-body').append(newP)
 // $('#text .card-body').prepend(newP)  // move it to the start
 $('#text .card-body').prepend("<p>I'm first!</p>")
@@ -78,7 +78,7 @@ $('#text .card-body').prepend("<p>I'm first!</p>")
 //     })
 
 
-// // Slide 15a
+// Slide 15a
 
 // let state = {
 //     currentEmotion: "happy"
@@ -112,34 +112,34 @@ $('#text .card-body').prepend("<p>I'm first!</p>")
    
 
 
-// // SLIDE 16 - Event listener - slide - it removes the item, but slowly... the display goes to none. it's still in the dom tree
-//     head1.click(function(event) {
-//     $(event.target).slideUp(1000)
-// })
+// SLIDE 16 - Event listener - slide - it removes the item, but slowly... the display goes to none. it's still in the dom tree
+    head1.click(function(event) {
+    $(event.target).slideUp(1000)
+})
 
 
-// // // SLIDE 17 JQuery Animation Effects
+// // SLIDE 17 JQuery Animation Effects
 
-// const state = {
-//     playground: {
-//         ballAtTop: true
-//     }
-// }
+const state = {
+    playground: {
+        ballAtTop: true
+    }
+}
 
-// ball.click(function(event){
-//     let ball = $(event.target)
-//     if(state.playground.ballAtTop){
-//         ball.animate( {cx:415, cy:320}, 1000, function(){
-//             //what to do when done
-//             ball.attr({cx:415, cy:320}) //actually move (not just appearance)
-//             state.playground.ballAtTop = false
-//         } )
-//     } else {
-//         ball.attr({ cx: 225, cy:95 });
-//         ball.css({ cx: 225, cy:95 });
-//         state.playground.ballAtTop = true
-//     }
-// })
+ball.click(function(event){
+    let ball = $(event.target)
+    if(state.playground.ballAtTop){
+        ball.animate( {cx:415, cy:320}, 1000, function(){
+            //what to do when done
+            ball.attr({cx:415, cy:320}) //actually move (not just appearance)
+            state.playground.ballAtTop = false
+        } )
+    } else {
+        ball.attr({ cx: 225, cy:95 });
+        ball.css({ cx: 225, cy:95 });
+        state.playground.ballAtTop = true
+    }
+})
 
 
 
