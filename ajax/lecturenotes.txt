@@ -5,7 +5,7 @@ bring up visual code
 Administrative stuff:
 Grading is done. You will find a set of issues in github from stage 1 that you will need to resolve in stage 2. 
 
-By end of today we will have covered everything you need for stage 2.
+By end of this video we will have covered everything you need for stage 2.
 
 One week from today we will start react. This will be a different way of doing things.
 Perhaps better to be completely done with stage2 assignment, but will give until next
@@ -13,7 +13,8 @@ Sunday to complete.
 
 
 Slide 2
-Any questions about things from chapter 14 or earlier?
+I'm going to walk through an example using a form, and hijack it to demonstrate how to do ajax
+Then i'm going to walk through an example that gives a basic framework for an app that has state, and reads the data in through ajax, but the data is a local test file.
 
 Slide 3
 
@@ -35,7 +36,7 @@ Users can provide input
 
 
 Slide 5
-When you click submit, the browser sends out an http request, just as if you had clicked on a hyperlink but the content of the form will dependon what was on the form.
+When you click submit, the browser sends out an http request, just as if you had clicked on a hyperlink but the content of the form will depend on what was on the form.
 
 In this example we are using "method=get" could use post
 
@@ -64,6 +65,8 @@ AJAX - Asynchronous Javasript and XML
 Created by Microsoft in the 90s for it's email. GMail and others also adopted and it has become a standard.
 
 Even though the acronym says XML, it sends back json now
+
+XML is extensible markup language. it's html where you write your own tags. structure for defining structured data.
 
 SLIDE 7
 

@@ -1,6 +1,6 @@
 'use strict';
 
-// SLIDE 11 part A - start by showing the form to grab data  
+// // SLIDE 11 part A - start by showing the form to grab data  
 // let form = document.querySelector('form');                      // grab the form element
 // form.addEventListener('submit', function(event) {               // listen for when the submit event occurs
 //     event.preventDefault();                                     // prevent the default behavior from happening ( the form sends the http request)
@@ -82,12 +82,14 @@
 
 //     console.log("do more stuff"); //there is no data yet
 
-
     
- })
+//  })
 
+ function renderRepos(data) {
+     document.querySelector('#content').append("<ul>...");
+ }
 
-function renderRepos(data){
-    $("#content").append("<ul>...")
+// function renderRepos(data){
+//     $("#content").append("<ul>...")
 
-}
+// }
