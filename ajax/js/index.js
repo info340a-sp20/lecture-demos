@@ -15,7 +15,7 @@ form.addEventListener('submit', function(event) {               // listen for wh
     let url = "https://api.github.com/search/repositories?q="+query
     console.log("sending request to", url);
 
-});
+// });
     
     
 //     // send the request!
@@ -61,29 +61,29 @@ form.addEventListener('submit', function(event) {               // listen for wh
 
 // });
  
-// // version 4 --SLIDE 19 -- show how to handle errors
+// version 4 --SLIDE 19 -- show how to handle errors
 
 
-//     fetch(url)
-//         .then(function(response){
-//             return response.json();       
-//         })
-//         .then(function(data){
-//             console.log(data);
-//             // throw new Error("HAHAHA");
-//             renderRepos(data);
-//         })
+    fetch(url)
+        .then(function(response){
+            return response.json();       
+        })
+        .then(function(data){
+            console.log(data);
+            throw new Error("HAHAHA");
+            renderRepos(data);
+        })
  
-//         .catch(function(error){
-//             console.log(error.message);
-//         })
-//         .then(function(){   
-//             console.log("final then!")
-//         })
+        .catch(function(error){
+            console.log(error.message);
+        })
+        .then(function(){   
+            console.log("final then!")
+        })
 
-//     console.log("do more stuff"); //there is no data yet
+    console.log("do more stuff"); //there is no data yet
 
-//     });
+    });
     
 // //  })
 
@@ -92,6 +92,6 @@ form.addEventListener('submit', function(event) {               // listen for wh
 
 // // }
 
-// function renderRepos(data) {
-//     let dataElem = document.querySelector('#content').append("<ul>...");
-// }
+function renderRepos(data) {
+    let dataElem = document.querySelector('#content').append("<ul>...");
+}
