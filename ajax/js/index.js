@@ -51,39 +51,39 @@ form.addEventListener('submit', function(event) {               // listen for wh
 // these 4 lines (console.log doesn't count) is how you get data
 
 
-// fetch(url)
-//     .then(function(response){
-//         return response.json();       
-// })
-//     .then(function(data){
-//     console.log(data);
-// })
+fetch(url)
+    .then(function(response){
+        return response.json();       
+})
+    .then(function(data){
+    console.log(data);
+})
 
-// });
+});
  
-// version 4 --SLIDE 19 -- show how to handle errors
+// // version 4 --SLIDE 19 -- show how to handle errors
 
 
-    fetch(url)
-        .then(function(response){
-            return response.json();       
-        })
-        .then(function(data){
-            console.log(data);
-            throw new Error("HAHAHA");
-            renderRepos(data);
-        })
+//     fetch(url)
+//         .then(function(response){
+//             return response.json();       
+//         })
+//         .then(function(data){
+//             console.log(data);
+//             throw new Error("HAHAHA");
+//             renderRepos(data);
+//         })
  
-        .catch(function(error){
-            console.log(error.message);
-        })
-        .then(function(){   
-            console.log("final then!")
-        })
+//         .catch(function(error){
+//             console.log(error.message);
+//         })
+//         .then(function(){   
+//             console.log("final then!")
+//         })
 
-    console.log("do more stuff"); //there is no data yet
+//     console.log("do more stuff"); //there is no data yet
 
-    });
+//     });
     
 // //  })
 
