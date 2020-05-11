@@ -189,34 +189,34 @@ let MESSAGES = ['Hello world!', "Goodbye y'all", "silence", "...", "Bueller?"];
 // console.log(foo());
 
 
-// //Example 5
+//Example 5
 
-// class Card {
-//     constructor(message, initial) {
-//         this.message = message;
-//         this.clickedCount = initial;
-//         this.cardDiv = document.createElement('div');
-//         this.cardDiv.classList.add('card');
+class Card {
+    constructor(message, initial) {
+        this.message = message;
+        this.clickedCount = initial;
+        this.cardDiv = document.createElement('div');
+        this.cardDiv.classList.add('card');
 
-//     }
+    }
 
-//     incrementCount() {
-//         this.clickedCount++;
-//         this.cardDiv.textContent = (this.message + " " + this.clickedCount);
-//     }
-//     render() {
-//         this.cardDiv.textContent = (this.message + " " + this.clickedCount);
-//         this.cardDiv.addEventListener("click", () => this.incrementCount())
-//         return this.cardDiv;
-//     }
+    incrementCount() {
+        this.clickedCount++;
+        this.cardDiv.textContent = (this.message + " " + this.clickedCount);
+    }
+    render() {
+        this.cardDiv.textContent = (this.message + " " + this.clickedCount);
+        this.cardDiv.addEventListener("click", () => this.incrementCount())
+        return this.cardDiv;
+    }
 
 
-// }
+}
 
-// //"main work"
+//"main work"
 
-// let cards = MESSAGES.map((msg, idx) => new Card(msg, idx))
+let cards = MESSAGES.map((msg, idx) => new Card(msg, idx))
 
-// cards.forEach((card) => {
-//     document.querySelector('#content').append(card.render())
-// })
+cards.forEach((card) => {
+    document.querySelector('#content').append(card.render())
+})
