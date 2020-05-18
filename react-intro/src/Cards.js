@@ -17,8 +17,8 @@ class Card extends Component {
 export default class CardList extends React.Component {
     render() {
         // let cardArray = this.props.messages.map((msgStr) => {
-        //     let card = <Card message={msgStr} />;
-                let cardArray = this.props.messages.map((msgStr, idx) => {
+        // let card = <Card message={msgStr} />;
+           let cardArray = this.props.messages.map((msgStr, idx) => {
            let card = <Card message={msgStr} key={idx}/>;
 
             return card;

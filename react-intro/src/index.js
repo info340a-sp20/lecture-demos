@@ -13,7 +13,7 @@ let message = React.createElement(
     },
     'Hello World!'           //content
  ); 
- 
+
  //show the content in the web page (inside #root)
  ReactDOM.render(message, document.getElementById('root'));
 
@@ -30,7 +30,7 @@ let message = React.createElement(
 
 // // here we make it a little more complicated by adding a class and embedding
 // // the h1 inside a header element
-// let header = <header className="jumbotron"><h1>Hello JSX</h1></header>
+// let header = <header className="jumbotron"><h1>Hello JSX</h1></header>;
 // ReactDOM.render(header, document.getElementById('root'));
 
 
@@ -41,12 +41,12 @@ let message = React.createElement(
 // let title = "Hello JSX as a String";
 
 // let header = (
-//             <header className="jumbotron">
-//             <h1>{title}</h1>
-//             <p>{1+1}</p>
-//             <p>"hello world".toUpperCase()</p>
-//             <p>{"hello world".toUpperCase()}</p>
-//             </header>
+//    <header className="jumbotron">
+//       <h1>{title}</h1>
+//       <p>{1 + 1}</p>
+//       <p>"hello world".toUpperCase()</p>
+//       <p>{"hello world".toUpperCase()}</p>
+//    </header>
 // );
 // ReactDOM.render(header, document.getElementById('root'));
 

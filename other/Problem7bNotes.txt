@@ -1,0 +1,375 @@
+Just notes for walking through problem-set-07 part b
+
+ES6 - kind of syntax we use in react to load and integrate external libraries, sharing code across multiple files
+
+Up until now we've been loading scripts by including script tags in our html. In react we won't be able to that as much
+
+Let's go through a couple of examples
+
+-----------------
+Slide 2
+Importing Modules
+
+There is an existing syntax that currently doesn't currently work in browsers. 
+You can import import libraries, the same way you would import libraries in java.
+
+We can do the same kind of things using ES6. It currently doesn't work natively in your browser if you use this syntax, but it does work if you have a compiled system like React. 
+
+So here's the syntax from Java:
+I want to import that "random" class from java.util library
+
+ES 6 work kind of the same way
+
+"import" and then the {name of the import} from where we are getting it
+
+If you want to import everything '*' as util or some other name. So we use it as "foo.random" where foo is the globally referred library (like "util" in the example on the slide
+
+
+There is another syntax that is used by "node" libraries.
+
+const util = require('util');
+
+the "require" function
+
+the require function does the exact same thing as is done in the ES6 method
+
+We are showing because you might see this syntax with stuff on the web
+
+------
+
+Slide 3
+Exporting Variables
+
+The other side of this is that we might want to export our code to share with other files
+
+Without this, you can't share things outside of that file. You have to explicitly export things to be shared. If you don't make it available, then it can't be shared. Think public or private. Things are "private" by default.
+
+Once these are imported we can just use them.
+
+And if we use the * to import, we call the functions using the "as" method shown on the previous slide
+
+theMethod.foo()
+theMethod.bar()
+
+etc where we "imported as theModule"
+--------------------
+
+Exercise 7b
+To demonstrate this, we're going to do the problem7 part b exercise.
+
+We're going to build a simple command line program
+
+It's going to allow us to 
+
+This stuff doesn't work directly in the browser without using react
+
+Command line structure
+
+We're going to push on "model view controller" archeticture which is a commonly used structure to organize. Useful to know as you get into more ocmplex programs.
+
+The tricky part, since we are running this inside the comamand line, we are using node.
+
+But Node doesn't actually support es6 yet. 
+
+So we have to jump through some other hoops to get it working
+
+We need to use what's called a compiler called babel. It tranlates our code into js code that node can understand
+We use babel with react as well
+
+So bring up the terminal in visual code
+
+Make sure we have everything so run "npm install"
+
+We do this with everything as you know
+
+check the version of npm
+
+We're going to us a program called "babelnode" 
+
+cd into problem-b folder
+run: npx babel-node js/index.js (full path)
+
+So now we know it works!!
+
+And that's how we will run and execute these lines of code
+
+
+-------------
+
+now we will build up some modules
+
+The primary goal is about importing/exporting modules
+
+Model view controller structure
+
+Divides into 3 parts
+
+Model, View, Controller
+
+We organize our code around this
+
+Model -
+Create a separate js file called "Model.js" - make it capital. The tester needs you to do this
+
+Each javascript file is a different module. So the only way they can share code is using import/export
+
+Add the 'use strict'; line at the top
+
+
+Import the twitter file
+
+Notice that this file is exporting
+
+The syntax says: "export default"
+
+-------------------------
+SLIDE 4
+Default Exports
+
+The default export will export the one thing you want to export
+
+When it's imported, the importer can choose to assign their own alias to access
+
+That's the most basic way to import
+
+------------------------------
+Back to the assignment
+
+import allTweets from './uw_ischool_tweets"
+
+you don't need to put the .js at the end. It's assumed.
+We want to put './' in front 
+
+if we don't put it there, then it's going to look for it in the nodemodules directory like other external things that come from the package.json file.
+
+so you won't put the './' with reactstrap which is installed with npm install because it comes in using the package.json process
+
+
+We can log it out (console.log(allTweets);
+
+npx babel-node js/model.js
+
+The model is the component that manages the data.
+
+Use the .map() method to simplify the data
+
+Using an arrow function here
+
+const tweetData = allTweets.map((tweetObj) => {
+    let mappedObj = {
+        text: tweetObj.text,
+        timestamp: Date.parse(tweetObj.created_at)
+    }
+    return mappedObj;
+});
+
+So we've created this thing so we have data that is actually useful for our program
+
+Do not export this variable!!!
+
+//private do not share
+
+We can provide accessors to get to it
+
+
+------------
+Define and export getrecenttweets
+
+First sort the tweets
+
+The .sort method takes a comparative function which takes in two values returning whether or not the 2 value is earlier. If so, return a positive value, other wise return negative
+
+tweetData.sort((tweet1, tweet2) => {
+    return tweet2.timestamp - tweet1.timestamp;
+});
+
+
+
+Then use the .slice method to slice the array from 0 to 5
+
+export function getRecentTweets() {
+    return tweetData.slice(0,5);
+}
+
+test it out. 
+
+console.log(getRecentTweets());
+
+I can move the sorting code to be inside the getRecenttweets just to make sure it's in the right order
+
+--------------
+
+SearchTweets
+
+export searchTweets
+-------
+
+export function searchTweets(searchQuery) {
+    tweetData.filter((tweetobj) => {
+        return tweetObj.text.indexOf(searchQuery) >= 0
+    })
+}
+
+This indexOf will return -1 if it doesn't find the index
+
+ignore case when searching tweets (make everythign lower case before comparing)
+
+.toLowerCase().indexOf(searchQuery) >= 0;
+
+
+-----------
+
+We now have a module that gets the database
+and provides access to search and getrecenttweets
+
+-------------
+Now lets do the view
+
+The view is the part that is responsible of the presentation of the data.
+
+We're not playing with the DOM here
+
+So let's create another file
+View.js
+
+'use strict';
+
+it's job is strictly to make things look nice
+
+Define and export "printTweets
+
+export function printTweets() {
+    for (let tweetObj of tweetArray){
+        let time = new Date(tweetObj.timestamp)
+        console.log("- "+
+        tweetObj.text+" ("+
+        time.toLocaleString("en-US") 
+        +")")
+        
+    }
+    
+}
+
+
+if the array is empty the method should instead log "No tweets found"
+
+export function printTweets() {
+    if (tweetArray.length == 0) {
+        console.log("No tweets found");
+    }
+    for (let tweetObj of tweetArray){
+        let time = new Date(tweetObj.timestamp)
+        console.log("- "+
+        tweetObj.text+" ("+
+        time.toLocaleString("en-US") 
+        +")")
+        
+    }
+    
+}
+
+We can temporarly import the data from the Model
+
+import {getRecentTweets} from './Model';
+
+So now we can test this by 
+let recent = getRecentTweets();
+
+and we can test:
+
+printTweets(recent);
+
+Now run the view.js file
+----------------------------
+'use strict';
+
+import {getRecentTweets} from './Model';
+
+export function printTweets(tweetArray) {
+    if (tweetArray.length == 0) {
+        console.log("No tweets found");
+    }
+    for (let tweetObj of tweetArray){
+        let time = new Date(tweetObj.timestamp)
+        console.log("- \""+
+        tweetObj.text+"\" ("+
+        time.toLocaleString("en-US") 
+        +")")
+        
+    }
+    
+}
+
+let recent = getRecentTweets();
+
+printTweets(recent);
+--------------------------------
+
+
+There are other ways to do this... template strings
+
+Now we're done with the View.
+
+Note that we no longer need to 
+
+
+-------------T
+The controller
+It's job is to facilitate between the model and the view.
+There is some 
+The place where we handle user input, controls.
+Think of a spreadsheet. the data is the model. the presentation is the view. the controls are the menus
+
+take in the user input and tell tell the view what to do.
+To interpret from the user and tell the view what to display
+
+handle user input.
+
+---------
+
+Getting user input from the user in command line is really annoying.
+
+we're going to use the readline-sync library. it's basically the scanner.
+
+https://github.com/anseki/readline-sync
+
+so we import it.
+
+import readline from 'readline-sync';
+Note i don't have the './' in front because we're installing it and it's going to the node_modules folder.
+
+export function runSearch(){
+    console.log("Here are some tweets by @UW_iSchool");
+    let recent = model.getRecentTweets();
+    printTweets(recent);
+
+    let queryResponse = readline.question("Search tweets, or EXIT to quit: ");
+
+    if (queryResponse === "EXIT"){
+        return; //quit
+    }
+
+    let results = model.searchTweets(queryResponse);
+    printTweets(results);
+
+}
+
+------------
+
+runSearch();
+
+
+Now run the controller VS
+
+All the stuff that should be done is appropriately done in the correct file.
+
+We have a place to go to resolve things related to their view
+
+comment out the runSearch();
+
+-----------
+
+So now we need to get this going in index.js because it's what starts things
+
+
+
