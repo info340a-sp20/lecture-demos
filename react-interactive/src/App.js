@@ -2,54 +2,33 @@ import React, { Component } from 'react';
 
 import 'whatwg-fetch';
 
-// BASE DEMO with example 1 code
-class App extends Component {
+// // BASE DEMO with example 1 code
+// class App extends Component {
 
-  render() {
-    //do data processing
-    let tasks = this.props.initialTasks;
-    let incomplete = tasks.filter((task) => !task.complete);
-    //console.log("Number of tasks:", incomplete.length);
+//   render() {
+//     //do data processing
+//     let tasks = this.props.initialTasks;
+//     let incomplete = tasks.filter((task) => !task.complete);
+//     //console.log("Number of tasks:", incomplete.length);
 
-    return (
-      <div className="container">
-        <p className="lead">Things I have to do ({incomplete.length})</p>
-        <TaskList tasks={tasks} />
-        <AddTaskForm />
-      </div>
-    );
-  }
-}
+//     return (
+//       <div className="container">
+//         <p className="lead">Things I have to do ({incomplete.length})</p>
+//         <TaskList tasks={tasks} />
+//         <AddTaskForm />
+//       </div>
+//     );
+//   }
+// }
 
 
-class TaskList extends Component {  
-  render() {
-    //do data processing
-    let taskComponents = this.props.tasks.map((eachTask) => {
-      let singleTask = <Task 
-                          key={eachTask.id} 
-                          task={eachTask} /> 
-      return singleTask;
-    })
-
-    return (
-      <ol>
-        {taskComponents}
-      </ol>
-    );
-  }
-}
-
-// // EXAMPLE 1B - adding a callback to toggle as a prop
 // class TaskList extends Component {  
 //   render() {
 //     //do data processing
 //     let taskComponents = this.props.tasks.map((eachTask) => {
 //       let singleTask = <Task 
 //                           key={eachTask.id} 
-//                           task={eachTask} 
-//                           howToToggle={this.props.howToToggle}
-//                           /> //pass callback down
+//                           task={eachTask} /> 
 //       return singleTask;
 //     })
 
@@ -61,29 +40,50 @@ class TaskList extends Component {
 //   }
 // }
 
+// // // EXAMPLE 1B - adding a callback to toggle as a prop
+// // class TaskList extends Component {  
+// //   render() {
+// //     //do data processing
+// //     let taskComponents = this.props.tasks.map((eachTask) => {
+// //       let singleTask = <Task 
+// //                           key={eachTask.id} 
+// //                           task={eachTask} 
+// //                           howToToggle={this.props.howToToggle}
+// //                           /> //pass callback down
+// //       return singleTask;
+// //     })
+
+// //     return (
+// //       <ol>
+// //         {taskComponents}
+// //       </ol>
+// //     );
+// //   }
+// // }
 
 
-class Task extends Component {
-  //helper method
-  getClassName() {
-    let className = '';
-    if(this.props.task.complete){
-      className = 'font-strike';
-    }
-    return className;    
-  }
 
-  render() {
-    let thisTask = this.props.task; //can give local name for readability
-    console.log("The Task: ", this.props.task);
+// // class Task extends Component {
+// //   //helper method
+// //   getClassName() {
+// //     let className = '';
+// //     if(this.props.task.complete){
+// //       className = 'font-strike';
+// //     }
+// //     return className;    
+// //   }
 
-    return (
-      <li className={this.getClassName()} >
-        {thisTask.description}
-      </li>
-    );
-  }
-}
+// //   render() {
+// //     let thisTask = this.props.task; //can give local name for readability
+// //     console.log("The Task: ", this.props.task);
+
+// //     return (
+// //       <li className={this.getClassName()} >
+// //         {thisTask.description}
+// //       </li>
+// //     );
+// //   }
+// // }
 
 // // EXAMPLE 1 Adding Event handler to handle clicks to mark Complete
 // class Task extends Component {
@@ -126,140 +126,6 @@ class Task extends Component {
 //   }
 // }
 
-class AddTaskForm extends Component {
-  constructor(props){
-    super(props);
-    this.state = {newTask: ''}; //what is typed in
-  }
-
-  handleChange = (event) => {    
-    //let whichElement = event.target;
-    //let whatValue = whichElement.value;
-    let value = event.target.value;
-    console.log("I changed to:", value);
-    this.setState({newTask: value})
-  }
-
-  handleClick = (event) => {
-    event.preventDefault();
-    this.props.howToAdd(this.state.newTask)
-  }
-
-  render() {
-    return (
-      <form>
-        <input 
-          className="form-control mb-3"
-          placeholder="What else do you have to do?"
-          value={this.state.newTask}
-          onChange={this.handleChange}
-          />
-        <button className="btn btn-primary" onClick={this.handleClick}>
-          Add task to list
-        </button>
-      </form>
-    );
-  }
-}
-
-//---------------------------------------------------------------------------------------------------------
-
-// // EXAMPLE 2 adding code to handle state in the Task component (Note that here the state is being kept in the Task component)
-// class App extends Component {
-
-//   render() {
-//     //do data processing
-//     let tasks = this.props.initialTasks;
-//     let incomplete = tasks.filter((task) => !task.complete);
-//     //console.log("Number of tasks:", incomplete.length);
-
-//     return (
-//       <div className="container">
-//         <p className="lead">Things I have to do ({incomplete.length})</p>
-//         <TaskList tasks={tasks} />
-//         <AddTaskForm />
-//       </div>
-//     );
-//   }
-// }
-
-// class TaskList extends Component {  
-//   render() {
-//     //do data processing
-//     let taskComponents = this.props.tasks.map((eachTask) => {
-//       let singleTask = <Task 
-//                           key={eachTask.id} 
-//                           task={eachTask} 
-//                           howToToggle={this.props.howToToggle}
-//                           /> //pass callback down
-//       return singleTask;
-//     })
-
-//     return (
-//       <ol>
-//         {taskComponents}
-//       </ol>
-//     );
-//   }
-// }
-
-// class Task extends Component {
-
-//   constructor(props) {
-//     super(props)  //tell the component class to handle assigning props and stuff
-    
-//     // EXAMPLE 2A ( and 2B) - using state object for toggling strikethrough
-//     this.state = {countClick: 0, isComplete: this.props.task.complete}
-//   }
-
-//   //helper method
-//   getClassName() {
-//     let className = '';
-
-//    //EXAMPLE 2A (and 2B) - using state object for toggline strikethrough
-//    if(this.state.isComplete){
-//       className = 'font-strike';
-//     }
-//     return className;    
-//   }
-
-//   // // EXAMPLE 2A - see the setstate in this block of code
-
-//   // handleClick = () => {    // public class field: use arrow here with an anonymous function rather than typing in the {}
-//   //    console.log("clicky clicky", this.props.task.description);
-
-
-//   //    this.setState({countClick: 1}) //change clickcount
-//   //    }
-//   // // End of example 2A code
-
-//   // EXAMPLE 2B: pass callback rather than object to modify based on current value (count)
-//   handleClick = () => {    // public class field: use arrow here with an anonymous function rather than typing in the {}
-//      console.log("clicky clicky", this.props.task.description);
-//      this.setState((prevState, prevProps) => {
-//         let updatedState = {countClick: prevState.countClick + 1,
-//                             isComplete: !prevState.isComplete
-//                           }
-
-//         return updatedState;  //must return the updated state
-//      } ) //change clickcount
-//      };   
-
-// //end of Example 2B code
-
-//     render() {
-
-//     return (
-//       <li className={this.getClassName()} onClick={this.handleClick}  >
-//         {this.props.task.description}
-//         {' '} ({this.state.countClick})
-//       </li>
-//     );
-//   }
-// }
-
-
-
 // class AddTaskForm extends Component {
 //   constructor(props){
 //     super(props);
@@ -296,6 +162,140 @@ class AddTaskForm extends Component {
 //   }
 // }
 
+//---------------------------------------------------------------------------------------------------------
+
+// EXAMPLE 2 adding code to handle state in the Task component (Note that here the state is being kept in the Task component)
+class App extends Component {
+
+  render() {
+    //do data processing
+    let tasks = this.props.initialTasks;
+    let incomplete = tasks.filter((task) => !task.complete);
+    //console.log("Number of tasks:", incomplete.length);
+
+    return (
+      <div className="container">
+        <p className="lead">Things I have to do ({incomplete.length})</p>
+        <TaskList tasks={tasks} />
+        <AddTaskForm />
+      </div>
+    );
+  }
+}
+
+class TaskList extends Component {  
+  render() {
+    //do data processing
+    let taskComponents = this.props.tasks.map((eachTask) => {
+      let singleTask = <Task 
+                          key={eachTask.id} 
+                          task={eachTask} 
+                          howToToggle={this.props.howToToggle}
+                          /> //pass callback down
+      return singleTask;
+    })
+
+    return (
+      <ol>
+        {taskComponents}
+      </ol>
+    );
+  }
+}
+
+class Task extends Component {
+
+  constructor(props) {
+    super(props)  //tell the component class to handle assigning props and stuff
+    
+    // EXAMPLE 2A ( and 2B) - using state object for toggling strikethrough
+    this.state = {countClick: 0, isComplete: this.props.task.complete}
+  }
+
+  //helper method
+  getClassName() {
+    let className = '';
+
+   //EXAMPLE 2A (and 2B) - using state object for toggline strikethrough
+   if(this.state.isComplete){
+      className = 'font-strike';
+    }
+    return className;    
+  }
+
+  // // EXAMPLE 2A - see the setstate in this block of code
+
+  // handleClick = () => {    // public class field: use arrow here with an anonymous function rather than typing in the {}
+  //    console.log("clicky clicky", this.props.task.description);
+
+
+  //    this.setState({countClick: 1}) //change clickcount
+  //    }
+  // // End of example 2A code
+
+  // EXAMPLE 2B: pass callback rather than object to modify based on current value (count)
+  handleClick = () => {    // public class field: use arrow here with an anonymous function rather than typing in the {}
+     console.log("clicky clicky", this.props.task.description);
+     this.setState((prevState, prevProps) => {
+        let updatedState = {countClick: prevState.countClick + 1,
+                            isComplete: !prevState.isComplete
+                          }
+
+        return updatedState;  //must return the updated state
+     } ) //change clickcount
+     };   
+
+//end of Example 2B code
+
+    render() {
+
+    return (
+      <li className={this.getClassName()} onClick={this.handleClick}  >
+        {this.props.task.description}
+        {' '} ({this.state.countClick})
+      </li>
+    );
+  }
+}
+
+
+
+class AddTaskForm extends Component {
+  constructor(props){
+    super(props);
+    this.state = {newTask: ''}; //what is typed in
+  }
+
+  handleChange = (event) => {    
+    //let whichElement = event.target;
+    //let whatValue = whichElement.value;
+    let value = event.target.value;
+    console.log("I changed to:", value);
+    this.setState({newTask: value})
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    this.props.howToAdd(this.state.newTask)
+  }
+
+  render() {
+    return (
+      <form>
+        <input 
+          className="form-control mb-3"
+          placeholder="What else do you have to do?"
+          value={this.state.newTask}
+          onChange={this.handleChange}
+          />
+        <button className="btn btn-primary" onClick={this.handleClick}>
+          Add task to list
+        </button>
+      </form>
+    );
+  }
+}
+
 //---------------------------------------------------------------------------------------------
 
 // //EXAMPLE 3 - Lifting state
@@ -306,12 +306,12 @@ class AddTaskForm extends Component {
 //     // initialize state 
 //     this.state = { tasks: this.props.initialTasks };
 
-//     // //Example 3A initialize state if we are going to load from a file 
-//     // this.state = {
-//     //   tasks: [] //SAMPLE_TASKS //store the tasks in the STATE, initialize
-//     // };
+//   //   //Example 3A initialize state if we are going to load from a file 
+//   //   this.state = {
+//   //     tasks: [] //SAMPLE_TASKS //store the tasks in the STATE, initialize
+//   //   };
 
-//   }
+//   // }
 
 //   // // Example 3A initial ize state if we are loading from a file
 //   // componentDidMount() {

@@ -6,8 +6,6 @@ We'll spend today going over most of the rest of React
 
 We'll try and pack most of this into 1 hour and anything that spills over we will do on Monday.
 
-Elisa will cover problem 7 in this session too.
-
 Any extra time you'll have time to do work time. Lab similarly is going to be about worktime going forward
 
 --------------------
@@ -81,6 +79,12 @@ input box (form)
 Note in our demo, in the index.js file we call the React.render() function and instantiate an <app> component to be rendered at the 'root'.
 
 Note we are passing in the sample tasks as a prop "initialTasks" which is what we will show initially.
+
+In the developer console show how I can hover over each of the components to show each component 
+
+We have components that render other components
+
+
 
 Now show on the slide the <app> component
 
@@ -256,6 +260,8 @@ So now we want to toggle the state of the item
 
 Rather than logging out "clicky clicky", we'd like to toggle the state of the item.
 
+Currently this is stored in 'this.props.task.complete'
+
 In this example, we are receiving a function called 'howToToggle' as a prop that we will call to toggle the task each click.
 
 The way we determine is to look at the this.props.task.complete
@@ -265,6 +271,8 @@ We'd like to just change the prop.
 But the issue is that we can't change a prop...
 
 So looking at the code on the slide, we can't actually change the prop, we need the function to change state.
+
+
 
 
 SLIDE 14
@@ -510,13 +518,13 @@ Making your app Interactive
 ------------------
 
 SLIDE 27
-Here's how you get fetch() to work in React
+Here's how you get fetch() to work in React. 
 
 
 Inside the public folder is a json file for showing how to get fetch to work.
 
 Couple of steps:
-First we install it for react (the polyfill)
+First we install it for react (the polyfill). Fetch doesn't work in all browsers remember, so we still need to install the polyfil. 
 
 Go to the terminal
 npm install whatwg-fetch
@@ -524,6 +532,21 @@ npm install whatwg-fetch
 --save is to save it in the package.json, but it happens now anyway
 
 Then import 'whatwg-fetch' inside the app.js
+
+
+So where do we usually use fetch? well, for your apps, you probably fetch in app.js since you'll need the data likely in the highest parent element.
+
+Put the data file in the public folder. So it's a separate file form my react source code. It's not compiled into the source.
+
+You might think you should do this in the constructor.
+
+The problem is that there is a distinct order that things happen. When react is rendering the component. First the constructor is called, then fetch is called. fetch will then finish and call set setstate. Setstate calls render. However if the component has not been attached to the dom tree, the whole thing might crash. 
+We have to make sure render has been called at least once before we call setstate. 
+Make sure its "mounted" to the tree before render is called.
+
+We need to make sure we're mounted before we fetch.
+
+We can't call fetch from the render function because it will be an endless loop
 
 ----------------------
 
@@ -540,6 +563,11 @@ When a component is first rendered and attached to the dom tree, the "componentd
 
 componentDidMount() is the one that is called when all components have been put on the screen 
 
+We can override these functions.
+
+YOu'll likely only use componentDidMount. And these 3 are the only ones you should use. Other lifecyle methods have been depracated or shouldn't be use.
+
+YOu don't have to use componentDidMount if you aren't fetching data on initialization. If for example the user clicks a button, to load something, you'll be fine.
 ------------------
 SLIDE 29
 AJAX and React
