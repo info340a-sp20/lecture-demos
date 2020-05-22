@@ -10,9 +10,9 @@ React Router
 SLIDE 3 - 
 
 Stage 3
-Due today for an extra 3 points. Okay to turn in by Friday. That will give you only 2 weeks to finish stage 4.
+The due date for the next stage is 5/31. The final is due one week later 6/7.
 
-If you are getting data that isn't real yet there is data available from api, try and get that working for stage 3
+If you are getting data that isn't real yet there is data available from api, try and get that working for this stage.
 
 ---------------------
 SLIDE 4 
@@ -23,7 +23,9 @@ Bring up the Demo
 
 Open Visual Code
 ----------DESCRIPTION OF EXISTING APP START----------
-Start at index.js
+Look at the clean file without comments to describe before starting to work.
+
+Start at index.js --- 
 
 We've got a Blog_posts data, and array with key
 
@@ -36,10 +38,11 @@ Get's added to my state, so I can change later
 
 I have an addpost function - it's how we add posts
 
-My App render() function takes state and maps it to some 
+My App render() function takes state and maps it to and array of <li> elements
  convert to a list of link elements which will be part of the navigation...
 
 See that the <nav> contains home, about, blog, then the dates I pass in {postlinks}
+So postlinks is part of the nav
 
 Then 3 components
 NewPostPage
@@ -49,6 +52,12 @@ BlogPostList
 The ABOUT page just returns static content
 --- 
 The BlogPostList - takes in a prop of list of posts and maps them to blogpost elements
+A little different syntax because we are reading from an array rather than from a json object (array of objects).
+
+"Object.keys" is a method that will take an object and convert it to an array of the keys (so the date strings).
+
+Then we use map to iterate over that array and transform it into an array of blogposts, with a key, date, and post, using the date to get to the this.props.posts[date] element.
+
 ---
 The blogpost elements renders a div that says post on some date, then the content
 
@@ -56,6 +65,8 @@ It's similar to the same pattern, in the to-do list
 We have a list that calls an item component
 
 ----
+NewPostPage---
+
 The form is a control form ("form-control") so whenever you modify the the date, or the text input ("what do you want to do"), That will cause the onChange so handleChange gets called 
 That function looks at each event that happens to see if it came from the text or the date, 
 and use that to setState which will change the state of the form component, changing the state of the form causes it to re-render and then do display the content in the bottom that i typed in.
@@ -70,7 +81,10 @@ Whatever was given we will pass in the current values of state
 postCallback is handed as props to my new post page, and the function which is called is addPost method (addPost is a public class field - remember)
 
 ---
-addPost
+addPost()
+
+What happens when we click on the button.
+
 Don't get too caught up in this code for addPost right now...
 When ever addPost is called, setState is called with text and state
 We use the callback version of doing this where we provide a callback
@@ -256,6 +270,10 @@ Find and use an external library. If you use reactstrap, then do more than one b
 SLIDE 8
 Slide again showing how to get reactstrap included in your files (also react-router)
 
+So you can see things show up in the package.json file so the next time someone clones your repo, they run npm install, they'll get what they need.
+
+Also note here on this slide we will need to install components to get BrowserRouter, Route, Switch, Link and NavLink.
+
 -----------------
 
 SLIDE 9
@@ -275,6 +293,10 @@ It's almost like I'm making an AJAX call
 it looks like you are going to a new page, but really it's the same page
 
 We are making a single page application, and it re-renders with a new URL, but it doesn't rerender everything
+
+So the router is sniffing the URL and when something changes it deals with it and calls setstate().
+
+Only those components that need to be rendered are re-rendered.
 
 We can cut the URL and paste into a new browser and it'll render the whole page
 
@@ -350,6 +372,7 @@ We import browserrouter to app.js
 add the <browserrouter> set of code to index.js to get the component working
 
 
+SLIDE 15 ------------
 
 Browserrouter is a component that listens to changes to the URL
 
