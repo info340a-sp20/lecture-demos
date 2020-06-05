@@ -28,7 +28,7 @@ I'll also let you stay in a group of 2, but you'll need to clean up and complete
 SLIDE 4
 Requirments
 
-YOu are adding a second feature
+You are adding a second feature
 
 Client-Side Routing
 
